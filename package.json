@@ -1,0 +1,13 @@
+{
+  "name": "gmail",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "@google-cloud/local-auth": "^2.1.1",
+    "googleapis": "105"
+  }
+}

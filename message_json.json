@@ -1,0 +1,213 @@
+{
+    "config":{
+        "url":"https://gmail.googleapis.com/gmail/v1/users/me/messages/18616032ee77c006",
+        "method":"GET",
+        "userAgentDirectives":[
+            {
+                "product":"google-api-nodejs-client",
+                "version":"6.0.4",
+                "comment":"gzip"
+            }
+        ],
+        "headers":{
+            "x-goog-api-client":"gdcl/6.0.4 gl-node/18.12.1 auth/8.7.0",
+            "Accept-Encoding":"gzip",
+            "User-Agent":"google-api-nodejs-client/6.0.4 (gzip)",
+            "Authorization":"Bearer ya29.a0AVvZVsp1sNAKYyNJRfW5EQlTfxTDesNKSYs7XJUAhOFkn-T2hiTIun2jOLs87X-Jplae2dotxUhpWWdw-cwPVCnHG2FqEuf9yE770fiZ7TncPhHZTy36sFZfJhKbjc-aAmTISg1bkESY8kMT9plztfEyt3Qv17MHaCgYKAXsSAQASFQGbdwaIaTYP0uXxytG4Yd_S3AajAA0167",
+            "Accept":"application/json"
+        },
+        "params":{
+
+        },
+        "retry":true,
+        "responseType":"json"
+    },
+    "data":{
+        "id":"18616032ee77c006",
+        "threadId":"18616032ee77c006",
+        "labelIds":[
+            "UNREAD",
+            "CATEGORY_UPDATES",
+            "INBOX"
+        ],
+        "snippet":"FlowBank's hand-curated fresh financial news 3.02.2023 Good morning FlowBankers! Here's the latest market news, hand-curated by our research team. The Big Story Apple's sales and",
+        "payload":{
+            "partId":"",
+            "mimeType":"multipart/alternative",
+            "filename":"",
+            "headers":[
+                {
+                    "name":"Delivered-To",
+                    "value":"hebuzuizailai@gmail.com"
+                },
+                {
+                    "name":"Received",
+                    "value":"by 2002:a05:7300:ec09:b0:99:91b6:6cf4 with SMTP id ow9csp900271dyb;        Thu, 2 Feb 2023 22:42:33 -0800 (PST)"
+                },
+                {
+                    "name":"X-Google-Smtp-Source",
+                    "value":"AK7set+24ewWMQWFNzz3itMqqJNkX3Z9099NdCNIegcJn5vdXo0VMQB9amJ7ENYQe6U98yzHJG5P"
+                },
+                {
+                    "name":"X-Received",
+                    "value":"by 2002:a05:622a:88:b0:3b9:b2c3:9d2e with SMTP id o8-20020a05622a008800b003b9b2c39d2emr17020601qtw.10.1675406552956;        Thu, 02 Feb 2023 22:42:32 -0800 (PST)"
+                },
+                {
+                    "name":"ARC-Seal",
+                    "value":"i=1; a=rsa-sha256; t=1675406552; cv=none;        d=google.com; s=arc-20160816;        b=orNV1rvhJ7iZ6viikEeq1GzmMyZ8qGlxylb4aLoivglQPISeSoNYCUg3gdS8R0/Ayr         zu4zEFfTagTDI1HsSLkXGykbmTjDbs1iWHFhRAj3BBbU3QxvBow/9zFdxIrhdYQn/8xl         NhkJySq9JDu9uKHe4BevBAjV43WpZKrPqmvYCWD/ZeZC6tdvBrki9wZnpB2jht90/KnI         X6R40srABr44htgCHQePOpnzgocpkju8w25JQpl9q4UXFjiQ7zIZqm25tgJ1Yd24w5wj         3vvzHVtgyMN8El2Eff/1fvrZxSPsAZwhHCyhRrrUgyBBVYD8ohnFN9dNAL7wob/u0znB         qLpQ=="
+                },
+                {
+                    "name":"ARC-Message-Signature",
+                    "value":"i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;        h=feedback-id:precedence:mime-version:subject:message-id:to:reply-to         :from:date:list-unsubscribe:dkim-signature:dkim-signature;        bh=Z197je5DliEMSisV7eY1JqCTS2BrE1s1b76mmHwsUdU=;        b=g1rD3dNKsajpxqzpN+eiDKQrg4CGMD7T7ORrDbTjvByozJ2sRM0he+idnIpmNJZWMp         0UxZFdjzB6tBk6D0zNJgyl7/YekSdmpJScE2mOllEPi+0EPx3/595OWXiQKd+wYpFnXM         eWLHXCibpDxUeR78Z3Ww7cZm9Vc8h1uSryLL/yFrtTrowy5+ykCAaODdHduU2RtNldgs         F5AgrA6Mp5P0zZeb3r1mCF9Qrm2/T0bh3qnnckwXn26gvtLZlkMYVvUtnqCAzqeg8lfx         IDAuhu+/XI5msp2Vi2Q7Fq0Ttw3LcKY5RPdO+G5WpIDX+Y/dPeehJOW5vqg5Zpn7Xd1G         icFA=="
+                },
+                {
+                    "name":"ARC-Authentication-Results",
+                    "value":"i=1; mx.google.com;       dkim=pass header.i=@bf02x.hubspotemail.net header.s=hs2 header.b=mtap9rkV;       dkim=pass header.i=@flowbank.com header.s=hs2-7797867 header.b=Riv6sgFM;       spf=pass (google.com: domain of 1axbtcm5nu5fbpf6afpmuygdrytfw8v0v4vii3-hebuzuizailai=gmail.com@bf02x.hubspotemail.net designates 158.247.18.113 as permitted sender) smtp.mailfrom=\"1axbtcm5nu5fbpf6afpmuygdrytfw8v0v4vii3-hebuzuizailai=gmail.com@bf02x.hubspotemail.net\";       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=flowbank.com"
+                },
+                {
+                    "name":"Return-Path",
+                    "value":"<1axbtcm5nu5fbpf6afpmuygdrytfw8v0v4vii3-hebuzuizailai=gmail.com@bf02x.hubspotemail.net>"
+                },
+                {
+                    "name":"Received",
+                    "value":"from bid46n3.bf02x.hubspotemail.net (bid46n3.bf02x.hubspotemail.net. [158.247.18.113])        by mx.google.com with ESMTPS id p17-20020a05622a00d100b003b9b48eba12si1307024qtw.331.2023.02.02.22.42.32        for <hebuzuizailai@gmail.com>        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Thu, 02 Feb 2023 22:42:32 -0800 (PST)"
+                },
+                {
+                    "name":"Received-SPF",
+                    "value":"pass (google.com: domain of 1axbtcm5nu5fbpf6afpmuygdrytfw8v0v4vii3-hebuzuizailai=gmail.com@bf02x.hubspotemail.net designates 158.247.18.113 as permitted sender) client-ip=158.247.18.113;"
+                },
+                {
+                    "name":"Authentication-Results",
+                    "value":"mx.google.com;       dkim=pass header.i=@bf02x.hubspotemail.net header.s=hs2 header.b=mtap9rkV;       dkim=pass header.i=@flowbank.com header.s=hs2-7797867 header.b=Riv6sgFM;       spf=pass (google.com: domain of 1axbtcm5nu5fbpf6afpmuygdrytfw8v0v4vii3-hebuzuizailai=gmail.com@bf02x.hubspotemail.net designates 158.247.18.113 as permitted sender) smtp.mailfrom=\"1axbtcm5nu5fbpf6afpmuygdrytfw8v0v4vii3-hebuzuizailai=gmail.com@bf02x.hubspotemail.net\";       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=flowbank.com"
+                },
+                {
+                    "name":"Received",
+                    "value":"by 172.16.170.87 with SMTP id awbamkyhwedctigiuctq8vxaih15cydwph8ci;        Fri, 3 Feb 2023 06:42:31 GMT"
+                },
+                {
+                    "name":"DKIM-Signature",
+                    "value":"v=1; s=hs2; d=bf02x.hubspotemail.net;         i=@bf02x.hubspotemail.net;         h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id;         a=rsa-sha256; c=relaxed/relaxed;         bh=Z197je5DliEMSisV7eY1JqCTS2BrE1s1b76mmHwsUdU=;         b=mtap9rkVjUYeh871+m3ce1Q5/MohL8T2nMrSQbw2ezijTWoCcIkKHHjqnSGn/R         dverZ32+7y8IqUOxa9pN6ws4HOlY2KZfXbD6rOqjhd2IDl5Ci5Be4s03x2FxHXj         qTQfUUuK6X/RIy3nLIsSU2cKdvKhDuwYF/PKZHJmvZpPS3DoowpW7pZPza+xMCD         gVqDeHGGAIkDt7FUlQf9wmW5u2ywKSCqEjseBh/5em5hZKOPOk4Wx/t6rQzfnaF         Ik3u8d02XQyqx5hbLkYneSdlsn/KKphH0LC4UDjPM1eIClA2aCbP1PC2YROeWJn         2UbBStmACWKjK29/a3dTIW5nmS4Q==; q=dns/txt; t=1675406550;         x=1675579350;"
+                },
+                {
+                    "name":"DKIM-Signature",
+                    "value":"v=1; s=hs2-7797867; d=flowbank.com;         i=@flowbank.com;         h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id;         a=rsa-sha256; c=relaxed/relaxed;         bh=Z197je5DliEMSisV7eY1JqCTS2BrE1s1b76mmHwsUdU=;         b=Riv6sgFMWTbm7tzjF4gSDxU/5ClvKH742/EMA0t6bXLAAVHxyE46fhioCWwnoz         3QPzAzkm1T770o/BWnOM0D3sUNVg9u3W14F7ThK9R5YSCamYyKFcUumjcugLdLE         DXV55+fzrXLGPmWVbcdwLLRWvlvwAi/eUjWI1nrSALJlCNO7VO9o9uJemYbZBI2         vNK883f+5IO2X9MvH7DcwA14e9VjnIP73vztk1XN9O8S0kWTt8/HnP387FmHVeH         n+pBurcuZuCQvBc4/NW0Mi0g8Xqbcfcirl7hAxM8v8sKMSStmzYl16NsKz3/1Ak         w8SKYH4P3w0b/wXzD/Gpqtor858g==; q=dns/txt; t=1675406550;         x=1675579350;"
+                },
+                {
+                    "name":"Return-Path",
+                    "value":"<1axbtcm5nu5fbpf6afpmuygdrytfw8v0v4vii3-hebuzuizailai=gmail.com@bf02x.hubspotemail.net>"
+                },
+                {
+                    "name":"X-HS-Cid",
+                    "value":"1axez2yxjl7zkdhvgecir73oebcvwj3i5lcscv"
+                },
+                {
+                    "name":"List-Unsubscribe",
+                    "value":"<mailto:1axc471rlv11hnbzs1i1kaay2duosrkhfzhxm3-hebuzuizailai=gmail.com@bf02x.hubspotemail.net?subject=unsubscribe>"
+                },
+                {
+                    "name":"Date",
+                    "value":"Fri, 3 Feb 2023 07:42:31 +0100"
+                },
+                {
+                    "name":"From",
+                    "value":"MarketFlow by FlowBank <research@flowbank.com>"
+                },
+                {
+                    "name":"Reply-To",
+                    "value":"research@flowbank.com"
+                },
+                {
+                    "name":"To",
+                    "value":"hebuzuizailai@gmail.com"
+                },
+                {
+                    "name":"Message-ID",
+                    "value":"<1675406463360.f7c78e10-276f-4f4a-97d8-e85e97d40d79@bf02x.hubspotemail.net>"
+                },
+                {
+                    "name":"Subject",
+                    "value":"Apple beats 👍 Nasdaq rallies 🎢 USD vs GBP & EUR ☔Oil, gold, copper 👀 "
+                },
+                {
+                    "name":"MIME-Version",
+                    "value":"1.0"
+                },
+                {
+                    "name":"Content-Type",
+                    "value":"multipart/alternative; boundary=\"----=_Part_276068_345852931.1675406550495\""
+                },
+                {
+                    "name":"Precedence",
+                    "value":"bulk"
+                },
+                {
+                    "name":"X-Report-Abuse-To",
+                    "value":"abuse@hubspot.com (see https://policy.hubspot.com/abuse-complaints)"
+                },
+                {
+                    "name":"Feedback-ID",
+                    "value":"aeexe5p:aiebs68s:aidf:HubSpot"
+                }
+            ],
+            "body":{
+                "size":0
+            },
+            "parts":[
+                {
+                    "partId":"0",
+                    "mimeType":"text/plain",
+                    "filename":"",
+                    "headers":[
+                        {
+                            "name":"Content-Type",
+                            "value":"text/plain; charset=utf-8"
+                        },
+                        {
+                            "name":"Content-Transfer-Encoding",
+                            "value":"quoted-printable"
+                        }
+                    ],
+                    "body":{}
+                },
+                {
+                    "partId":"1",
+                    "mimeType":"text/html",
+                    "filename":"",
+                    "headers":[
+                        {
+                            "name":"Content-Type",
+                            "value":"text/html; charset=\"utf-8\""
+                        },
+                        {
+                            "name":"Content-Transfer-Encoding",
+                            "value":"quoted-printable"
+                        }
+                    ],
+                    "body":{}
+                }
+            ]
+        },
+        "sizeEstimate":148387,
+        "historyId":"508383",
+        "internalDate":"1675406551000"
+    },
+    "headers":{
+        "alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "cache-control":"private",
+        "connection":"close",
+        "content-encoding":"gzip",
+        "content-type":"application/json; charset=UTF-8",
+        "date":"Fri, 03 Feb 2023 10:02:57 GMT",
+        "server":"ESF",
+        "transfer-encoding":"chunked",
+        "vary":"Origin, X-Origin, Referer",
+        "x-content-type-options":"nosniff",
+        "x-frame-options":"SAMEORIGIN",
+        "x-xss-protection":"0"
+    },
+    "status":200,
+    "statusText":"OK",
+    "request":{
+        "responseURL":"https://gmail.googleapis.com/gmail/v1/users/me/messages/18616032ee77c006"
+    }
+}
