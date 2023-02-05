@@ -1,17 +1,17 @@
-const fs = require('fs').promises;
-const path = require('path');
-const process = require('process');
-const {authenticate} = require('@google-cloud/local-auth');
-const {google} = require('googleapis');
+const fs = require('fs').promises
+const path = require('path')
+const process = require('process')
+const { authenticate } = require('@google-cloud/local-auth')
+const { google } = require('googleapis')
 // https://cloud.google.com/appengine/docs/standard/go111/mail/sending-receiving-with-mail-api?hl=zh-cn
 
 // If modifying these scopes, delete token.json.
-const SCOPES = ['https://www.googleapis.com/auth/gmail.readonly'];
+const SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 // The file token.json stores the user's access and refresh tokens, and is
 // created automatically when the authorization flow completes for the first
 // time.
-const TOKEN_PATH = path.join(process.cwd(), 'token.json');
-const CREDENTIALS_PATH = path.join(process.cwd(), 'credentials.json');
+const TOKEN_PATH = path.join(process.cwd(), 'token.json')
+const CREDENTIALS_PATH = path.join(process.cwd(), '.credentials.json')
 
 /**
  * Reads previously authorized credentials from the save file.
@@ -20,11 +20,11 @@ const CREDENTIALS_PATH = path.join(process.cwd(), 'credentials.json');
  */
 async function loadSavedCredentialsIfExist() {
   try {
-    const content = await fs.readFile(TOKEN_PATH);
-    const credentials = JSON.parse(content);
-    return google.auth.fromJSON(credentials);
+    const content = await fs.readFile(TOKEN_PATH)
+    const credentials = JSON.parse(content)
+    return google.auth.fromJSON(credentials)
   } catch (err) {
-    return null;
+    return null
   }
 }
 
@@ -35,16 +35,16 @@ async function loadSavedCredentialsIfExist() {
  * @return {Promise<void>}
  */
 async function saveCredentials(client) {
-  const content = await fs.readFile(CREDENTIALS_PATH);
-  const keys = JSON.parse(content);
-  const key = keys.installed || keys.web;
+  const content = await fs.readFile(CREDENTIALS_PATH)
+  const keys = JSON.parse(content)
+  const key = keys.installed || keys.web
   const payload = JSON.stringify({
     type: 'authorized_user',
     client_id: key.client_id,
     client_secret: key.client_secret,
     refresh_token: client.credentials.refresh_token,
-  });
-  await fs.writeFile(TOKEN_PATH, payload);
+  })
+  await fs.writeFile(TOKEN_PATH, payload)
 }
 
 /**
@@ -52,18 +52,18 @@ async function saveCredentials(client) {
  *
  */
 async function authorize() {
-  let client = await loadSavedCredentialsIfExist();
+  let client = await loadSavedCredentialsIfExist()
   if (client) {
-    return client;
+    return client
   }
   client = await authenticate({
     scopes: SCOPES,
     keyfilePath: CREDENTIALS_PATH,
-  });
+  })
   if (client.credentials) {
-    await saveCredentials(client);
+    await saveCredentials(client)
   }
-  return client;
+  return client
 }
 
 /**
@@ -72,15 +72,15 @@ async function authorize() {
  * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
  */
 async function listLabels(auth) {
-  const gmail = google.gmail({version: 'v1', auth});
+  const gmail = google.gmail({ version: 'v1', auth })
   const res = await gmail.users.messages.list({
     userId: 'me',
-  });
+  })
   const id = res.data.messages[0].id
   console.log(res.data.messages[0], 'res')
-  const message = await gmail.users.messages.get({userId:'me', id})
+  const message = await gmail.users.messages.get({ userId: 'me', id })
   console.log(message)
   const content = await fs.writeFile('message.json', JSON.stringify(message))
 }
 
-authorize().then(listLabels).catch(console.error);
+authorize().then(listLabels).catch(console.error)
